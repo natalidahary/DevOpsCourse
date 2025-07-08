@@ -30,6 +30,11 @@ Proxies API requests to http://localhost:5002
 
 
 ### 2. Local Docker (on Mac)
+Nginx configuration (for frontend Docker image):
+The frontend uses a custom nginx.conf
+This allows:
+- Serving the React app at /
+- Proxying API requests /api/* to the backend service in Docker Compose.
 Build & start containers:
 ![docker compose ps](./screenshots/compose_ps_docker.png)
 docker compose up -d
