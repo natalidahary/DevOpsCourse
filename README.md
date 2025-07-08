@@ -40,16 +40,16 @@ This allows:
 - Serving the React app at /
 - Proxying API requests /api/* to the backend service in Docker Compose.
 - Build & start containers:
-<img src="./screenshots/compose_ps_docker.png" width="500" height="350"/>
+<img src="./screenshots/compose_ps_docker.png" width="400" height="350"/>
 - docker compose up -d
-<img src="./screenshots/build_containers.png" width="500" height="200"/>
+<img src="./screenshots/build_containers.png" width="400" height="100"/>
 Access:
 
 - Frontend: http://localhost:8080
-<img src="./screenshots/localhost_frontend_docker.png" height="150"/>
+<img src="./screenshots/localhost_frontend_docker.png" width="400" height="150"/>
 
 - Backend: http://localhost:5001/api/notes
-<img src="./screenshots/localhost_backend_docker.png" width="500" height="350"/>
+<img src="./screenshots/localhost_backend_docker.png"  height="350"/>
 
 Stop:
 - docker compose down
