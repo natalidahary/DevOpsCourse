@@ -12,60 +12,62 @@ Built to be easily run:
 
 ### 1. Local development (directly on your machine)
 Run backend:
-- **cd backend
-- **npm install
-- **node index.js
+- cd backend
+- npm install
+- node index.js
 <img src="./screenshots/node_index.png" width="500" height="350"/>
-- **Runs on http://localhost:5002
+- Runs on http://localhost:5002
 <img src="./screenshots/localhost_backend.png" width="500" height="350"/>
 
 Run frontend:
-- **cd frontend
-- **npm install
-- **npm start
+- cd frontend
+- npm install
+- npm start
 <img src="./screenshots/npm_start.png" width="500" height="350"/>
-- **Opens http://localhost:3000
+- Opens http://localhost:3000
 <img src="./screenshots/localhost_frontend.png" width="500" height="350"/>
-- **Proxies API requests to http://localhost:5002
+- Proxies API requests to http://localhost:5002
 
+---
 
 ### 2. Local Docker (on Mac)
 Nginx configuration (for frontend Docker image):
-The frontend uses a custom nginx.conf
+- The frontend uses a custom nginx.conf
 This allows:
 - Serving the React app at /
 - Proxying API requests /api/* to the backend service in Docker Compose.
-Build & start containers:
-![docker compose ps](./screenshots/compose_ps_docker.png)
-docker compose up -d
-![build containers](./screenshots/build_containers.png)
+- Build & start containers:
+<img src="./screenshots/compose_ps_docker.png" width="500" height="350"/>
+- docker compose up -d
+<img src="./screenshots/build_containers.png" width="500" height="350"/>
 Access:
-Frontend: http://localhost:8080
-![localhost frontend docker](./screenshots/localhost_frontend_docker.png)
-Backend: http://localhost:5001/api/notes
-![localhost backend docker](./screenshots/localhost_backend_docker.png)
+- Frontend: http://localhost:8080
+<img src="./screenshots/localhost_frontend_docker.png" width="500" height="350"/>
+- Backend: http://localhost:5001/api/notes
+<img src="./screenshots/localhost_backend_docker.png" width="500" height="350"/>
 Stop:
-docker compose down
+- docker compose down
 
 Instead of running docker build + docker push by hand, you can use:
-./build-and-push.sh
-Build images of FE and BE locally and push to Docker Hub by script.
-![upload dockerhub](./screenshots/upload_dockerhub.png)
+- ./build-and-push.sh
+- Build images of FE and BE locally and push to Docker Hub by script.
+<img src="./screenshots/upload_dockerhub.png" width="500" height="350"/>
 
+---
 
 ### 3. On Azure VM (Docker Compose)
 Connect to VM:
-![vm azure](./screenshots/vm_azure.png)
-chmod 400 /path/my-devops-vm_key.pem
-ssh -i path/to/key.pem azureuser@<VM_IP>
-creating a docker-compose.yml file on VM.
-![docker compose ps](./screenshots/compose_ps_vm.png)
+<img src="./screenshots/vm_azure.png" width="500" height="350"/>
+- chmod 400 /path/my-devops-vm_key.pem
+- ssh -i path/to/key.pem azureuser@<VM_IP>
+- creating a docker-compose.yml file on VM.
+<img src="./screenshots/compose_ps_vm.png" width="500" height="350"/>
 Pull & run containers:
-docker-compose up -d
+- docker-compose up -d
 Access:
-Frontend: http://<VM_IP>/
-![frontend vm](./screenshots/frontend_vm.png)
-Backend API direct: http://<VM_IP>:5000/api/notes
-![backend vm](./screenshots/backend_vm.png)
+- Frontend: http://<VM_IP>/
+<img src="./screenshots/frontend_vm.png" width="500" height="350"/>
+- Backend API direct: http://<VM_IP>:5000/api/notes
+<img src="./screenshots/backend_vm.png" width="500" height="350"/>
 Stop:
-docker-compose down
+- docker-compose down
