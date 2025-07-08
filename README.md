@@ -15,10 +15,10 @@ Run backend:
 - cd backend
 - npm install
 - node index.js
-<img src="./screenshots/node_index.png" width="500" height="350"/>
+<img src="./screenshots/node_index.png" width="500" height="200"/>
 
 - Runs on http://localhost:5002
-<img src="./screenshots/localhost_backend.png" width="500" height="400"/>
+<img src="./screenshots/localhost_backend.png" height="350"/>
 
 Run frontend:
 - cd frontend
@@ -66,7 +66,7 @@ Instead of running docker build + docker push by hand, you can use:
 
 Connect to VM:
 
-<img src="./screenshots/vm_azure.png"  width="400" height="100"/>
+<img src="./screenshots/vm_azure.png"  width="200" height="100"/>
 
 - chmod 400 /path/my-devops-vm_key.pem
 - ssh -i path/to/key.pem azureuser@<VM_IP>
