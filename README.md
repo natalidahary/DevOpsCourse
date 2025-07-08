@@ -23,13 +23,11 @@ Run frontend:
 - cd frontend
 - npm install
 - npm start
-```markdown
 <img src="./screenshots/npm_start.png" width="500" height="200"/>
-```
+
 - Opens http://localhost:3000
-```markdown
 <img src="./screenshots/localhost_frontend.png" width="500" height="200"/>
-```
+
 - Proxies API requests to http://localhost:5002
 
 ---
@@ -41,22 +39,17 @@ This allows:
 - Serving the React app at /
 - Proxying API requests /api/* to the backend service in Docker Compose.
 - Build & start containers:
-```markdown
 <img src="./screenshots/compose_ps_docker.png" width="500" height="350"/>
-```
 - docker compose up -d
-```markdown
-<img src="./screenshots/build_containers.png" width="500" height="350"/>
-```
+<img src="./screenshots/build_containers.png" width="500" height="200"/>
 Access:
+
 - Frontend: http://localhost:8080
-```markdown
-<img src="./screenshots/localhost_frontend_docker.png" width="500" height="350"/>
-```
+<img src="./screenshots/localhost_frontend_docker.png" width="500" height="200"/>
+
 - Backend: http://localhost:5001/api/notes
-```markdown
 <img src="./screenshots/localhost_backend_docker.png" width="500" height="350"/>
-```
+
 Stop:
 - docker compose down
 
@@ -69,25 +62,21 @@ Instead of running docker build + docker push by hand, you can use:
 
 ### 3. On Azure VM (Docker Compose)
 Connect to VM:
-```markdown
-<img src="./screenshots/vm_azure.png" width="500" height="350"/>
-```
+<img src="./screenshots/vm_azure.png" width="500" height="200"/>
+
 - chmod 400 /path/my-devops-vm_key.pem
 - ssh -i path/to/key.pem azureuser@<VM_IP>
 - creating a docker-compose.yml file on VM.
-```markdown
 <img src="./screenshots/compose_ps_vm.png" width="500" height="350"/>
-```
+
 Pull & run containers:
 - docker-compose up -d
 Access:
 - Frontend: http://<VM_IP>/
-```markdown
-<img src="./screenshots/frontend_vm.png" width="500" height="350"/>
-```
+<img src="./screenshots/frontend_vm.png" width="500" height="200"/>
+
 - Backend API direct: http://<VM_IP>:5000/api/notes
-```markdown
 <img src="./screenshots/backend_vm.png" width="500" height="350"/>
-```
+
 Stop:
 - docker-compose down
