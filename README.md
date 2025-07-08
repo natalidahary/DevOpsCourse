@@ -18,16 +18,16 @@ Run backend:
 <img src="./screenshots/node_index.png" width="500" height="350"/>
 
 - Runs on http://localhost:5002
-<img src="./screenshots/localhost_backend.png" width="500" height="350"/>
+<img src="./screenshots/localhost_backend.png" width="500" height="400"/>
 
 Run frontend:
 - cd frontend
 - npm install
 - npm start
-<img src="./screenshots/npm_start.png" width="500" height="150"/>
+<img src="./screenshots/npm_start.png" width="400" height="100"/>
 
 - Opens http://localhost:3000
-<img src="./screenshots/localhost_frontend.png" width="500" height="200"/>
+<img src="./screenshots/localhost_frontend.png" width="400" height="100"/>
 
 - Proxies API requests to http://localhost:5002
 
