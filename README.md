@@ -11,12 +11,10 @@ Built to be easily run:
 ## How to run in different environments
 
 ### 1. Local development (directly on your machine)
-```bash
 Run backend:
 cd backend
 npm install
 node index.js
-``` 
 <img src="./screenshots/node_index.png" width="500"/>
 <img src="./screenshots/node_index.png" height="350"/>
 Runs on http://localhost:5002
