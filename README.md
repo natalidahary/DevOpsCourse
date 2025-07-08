@@ -15,6 +15,7 @@ Run backend:
 cd backend
 npm install
 node index.js
+<img src="./screenshots/node_index.png" width="300"/> <img src="./screenshots/node_index.png" height="200"/>
 ![Node index.js](./screenshots/node_index.png)
 Runs on http://localhost:5002
 ![localhost backend](./screenshots/localhost_backend.png)
