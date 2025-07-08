@@ -46,8 +46,7 @@ This allows:
 Access:
 
 - Frontend: http://localhost:8080
-<img src="./screenshots/localhost_frontend_docker.png" width="500"/>
-<img src="./screenshots/localhost_frontend_docker.png" height="200"/>
+<img src="./screenshots/localhost_frontend_docker.png" height="150"/>
 
 - Backend: http://localhost:5001/api/notes
 <img src="./screenshots/localhost_backend_docker.png" width="500" height="350"/>
@@ -63,8 +62,10 @@ Instead of running docker build + docker push by hand, you can use:
 ---
 
 ### 3. On Azure VM (Docker Compose)
+
 Connect to VM:
-<img src="./screenshots/vm_azure.png" width="500" height="200"/>
+
+<img src="./screenshots/vm_azure.png"  height="150"/>
 
 - chmod 400 /path/my-devops-vm_key.pem
 - ssh -i path/to/key.pem azureuser@<VM_IP>
@@ -75,10 +76,10 @@ Pull & run containers:
 - docker-compose up -d
 Access:
 - Frontend: http://<VM_IP>/
-<img src="./screenshots/frontend_vm.png" width="500" height="200"/>
+<img src="./screenshots/frontend_vm.png"  height="150"/>
 
 - Backend API direct: http://<VM_IP>:5000/api/notes
-<img src="./screenshots/backend_vm.png" width="500" height="350"/>
+<img src="./screenshots/backend_vm.png"  height="350"/>
 
 Stop:
 - docker-compose down
