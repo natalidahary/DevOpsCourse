@@ -12,11 +12,11 @@ Built to be easily run:
 
 ### 1. Local development (directly on your machine)
 Run backend:
-cd backend
-npm install
-node index.js
+- ** cd backend
+- ** npm install
+- ** node index.js
 <img src="./screenshots/node_index.png" width="500" height="350"/>
-Runs on http://localhost:5002
+- ** Runs on http://localhost:5002
 <img src="./screenshots/localhost_backend.png" width="500" height="350"/>
 
 Run frontend:
