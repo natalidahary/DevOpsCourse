@@ -32,7 +32,7 @@ This project is a practical DevOps training exercise, designed to showcase how t
 - cd backend
 - npm install
 - node index.js
-<img src="./screenshots/node_index.png" width="500" height="200"/>
+<img src="./screenshots/node_index.png" width="500" height="100"/>
 
 - Runs on http://localhost:5002
 <img src="./screenshots/localhost_backend.png" width="600" height="350"/>
@@ -63,14 +63,14 @@ This project is a practical DevOps training exercise, designed to showcase how t
 - Serving the React app at /
 - Proxying API requests /api/* to the backend service in Docker Compose.
 - Build & start containers:
-<img src="./screenshots/compose_ps_docker.png" width="700" height="500"/>
+<img src="./screenshots/compose_ps_docker.png" width="500" height="500"/>
 
 - docker compose up -d
 <img src="./screenshots/build_containers.png" width="400" height="100"/>
 
 **Access:**
 - Frontend: http://localhost:8080
-<img src="./screenshots/localhost_frontend_docker.png" width="400" height="150"/>
+<img src="./screenshots/localhost_frontend_docker.png" width="300" height="100"/>
 
 - Backend: http://localhost:5001/api/notes
 <img src="./screenshots/localhost_backend_docker.png" width="600" height="350"/>
@@ -78,7 +78,7 @@ This project is a practical DevOps training exercise, designed to showcase how t
 **Stop:**
 - docker compose down
 
-Instead of running docker build + docker push by hand, you can use:
+**Instead of running docker build + docker push by hand, you can use:**
 - ./build-and-push.sh
 - Build images of FE and BE locally and push to Docker Hub by script.
 <img src="./screenshots/upload_dockerhub.png" width="500" height="350"/>
@@ -88,7 +88,8 @@ Instead of running docker build + docker push by hand, you can use:
 ### 3. On Azure VM (Docker Compose)
 
 **Connect to VM:**
-<img src="./screenshots/vm_azure.png"  width="250" height="200"/>
+
+<img src="./screenshots/vm_azure.png"  width="250" height="100"/>
 <img src="./screenshots/port_rules.png"  width="500" height="350"/>
 
 - chmod 400 /path/my-devops-vm_key.pem
@@ -100,7 +101,7 @@ Instead of running docker build + docker push by hand, you can use:
 - docker-compose up -d
 **Access:**
 - Frontend: http://<VM_IP>/
-<img src="./screenshots/frontend_vm.png"  height="150"/>
+<img src="./screenshots/frontend_vm.png"  height="100"/>
 
 - Backend API direct: http://<VM_IP>:5000/api/notes
 <img src="./screenshots/backend_vm.png" width="600"  height="350"/>
