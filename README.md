@@ -1,10 +1,25 @@
 # DevOps Course project
-Backend: Node.js + Express serving a JSON file (notes.json), exposes REST API on /api/notes.
-Frontend: React app that consumes the backend API.
+This project is a practical DevOps training exercise, designed to showcase how to develop, containerize, and deploy a full-stack JavaScript application in multiple environments.
+It combines:
+- Backend: Node.js + Express serving a JSON file (notes.json) via a REST API at /api/notes.
+- Frontend: React app consuming this backend API.
+- Containerization: Docker + Docker Compose.
+- Deployment: Runs locally, in local Docker, and on a remote Azure VM using Docker Compose.
 Built to be easily run:
 - Locally with npm
 - In Docker (Mac or Windows)
 - On a remote VM (Azure) using Docker Compose
+
+---
+
+## Technology stack
+| Layer      | Technology              | Purpose                                   |
+| ---------- | ----------------------- | ----------------------------------------- |
+| Backend    | Node.js + Express       | Serves JSON data as REST API              |
+| Frontend   | React                   | UI consuming backend API                  |
+| Web server | Nginx                   | Serves React static files + reverse proxy |
+| Containers | Docker + Docker Compose | Isolated reproducible environments        |
+| Cloud      | Azure VM (Ubuntu)       | Production-like deployment                |
 
 ---
 
@@ -34,8 +49,14 @@ Run frontend:
 ---
 
 ### 2. Local Docker (on Mac)
+Builds Docker images for:
+- Frontend: multi-stage build with React + Nginx
+- Backend: Node.js image
+- Starts containers defined in docker-compose.yml.
 Nginx configuration (for frontend Docker image):
 - The frontend uses a custom nginx.conf
+<img src="./screenshots/nginx_conf.png" width="400" height="300"/>
+
 This allows:
 - Serving the React app at /
 - Proxying API requests /api/* to the backend service in Docker Compose.
