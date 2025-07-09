@@ -66,7 +66,7 @@ Instead of running docker build + docker push by hand, you can use:
 
 Connect to VM:
 
-<img src="./screenshots/vm_azure.png"  width="300" height="200"/>
+<img src="./screenshots/vm_azure.png"  width="200" height="200"/>
 <img src="./screenshots/port_rules.png"  width="500" height="350"/>
 
 - chmod 400 /path/my-devops-vm_key.pem
