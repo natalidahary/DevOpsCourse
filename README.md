@@ -55,6 +55,7 @@ This project is a practical DevOps training exercise, designed to showcase how t
 - Frontend: multi-stage build with React + Nginx
 - Backend: Node.js image
 - Starts containers defined in docker-compose.yml.
+
 **Nginx configuration (for frontend Docker image):**
 - The frontend uses a custom nginx.conf
 <img src="./screenshots/nginx_conf.png" width="300" height="200"/>
