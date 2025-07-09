@@ -2,12 +2,14 @@
 This project is a practical DevOps training exercise, designed to showcase how to develop, containerize, and deploy a full-stack JavaScript application in multiple environments.
 
 It combines:
+------------
 - Backend: Node.js + Express serving a JSON file (notes.json) via a REST API at /api/notes.
 - Frontend: React app consuming this backend API.
 - Containerization: Docker + Docker Compose.
 - Deployment: Runs locally, in local Docker, and on a remote Azure VM using Docker Compose.
 
 Built to be easily run:
+-----------------------
 - Locally with npm
 - In Docker (Mac or Windows)
 - On a remote VM (Azure) using Docker Compose
@@ -29,6 +31,7 @@ Built to be easily run:
 
 ### 1. Local development (directly on your machine)
 Run backend:
+------------
 - cd backend
 - npm install
 - node index.js
@@ -38,6 +41,7 @@ Run backend:
 <img src="./screenshots/localhost_backend.png" width="700" height="350"/>
 
 Run frontend:
+-------------
 - cd frontend
 - npm install
 - npm start
@@ -52,14 +56,17 @@ Run frontend:
 
 ### 2. Local Docker (on Mac)
 Builds Docker images for:
+-------------------------
 - Frontend: multi-stage build with React + Nginx
 - Backend: Node.js image
 - Starts containers defined in docker-compose.yml.
 Nginx configuration (for frontend Docker image):
+------------
 - The frontend uses a custom nginx.conf
 <img src="./screenshots/nginx_conf.png" width="300" height="200"/>
 
 This allows:
+------------
 - Serving the React app at /
 - Proxying API requests /api/* to the backend service in Docker Compose.
 - Build & start containers:
@@ -67,8 +74,9 @@ This allows:
 
 - docker compose up -d
 <img src="./screenshots/build_containers.png" width="400" height="100"/>
-Access:
 
+Access:
+-------
 - Frontend: http://localhost:8080
 <img src="./screenshots/localhost_frontend_docker.png" width="400" height="150"/>
 
@@ -76,9 +84,11 @@ Access:
 <img src="./screenshots/localhost_backend_docker.png" width="700" height="350"/>
 
 Stop:
+-----
 - docker compose down
 
 Instead of running docker build + docker push by hand, you can use:
+-------------------------------------------------------------------
 - ./build-and-push.sh
 - Build images of FE and BE locally and push to Docker Hub by script.
 <img src="./screenshots/upload_dockerhub.png" width="500" height="350"/>
@@ -88,7 +98,7 @@ Instead of running docker build + docker push by hand, you can use:
 ### 3. On Azure VM (Docker Compose)
 
 Connect to VM:
-
+--------------
 <img src="./screenshots/vm_azure.png"  width="250" height="200"/>
 <img src="./screenshots/port_rules.png"  width="500" height="350"/>
 
@@ -98,8 +108,10 @@ Connect to VM:
 <img src="./screenshots/compose_ps_vm.png" width="500" height="350"/>
 
 Pull & run containers:
+----------------------
 - docker-compose up -d
 Access:
+-------
 - Frontend: http://<VM_IP>/
 <img src="./screenshots/frontend_vm.png"  height="150"/>
 
@@ -107,4 +119,5 @@ Access:
 <img src="./screenshots/backend_vm.png" width="700" height="350"/>
 
 Stop:
+-----
 - docker-compose down
