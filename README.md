@@ -38,7 +38,7 @@ This project is a practical DevOps training exercise, designed to showcase how t
 <img src="./screenshots/localhost_backend.png" width="600" height="350"/>
 
 **Run frontend:**
-- cd frontend
+- *cd frontend*
 - npm install
 - npm start
 <img src="./screenshots/npm_start.png" width="400" height="100"/>
