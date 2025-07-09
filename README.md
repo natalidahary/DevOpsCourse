@@ -1,10 +1,12 @@
 # DevOps Course project
 This project is a practical DevOps training exercise, designed to showcase how to develop, containerize, and deploy a full-stack JavaScript application in multiple environments.
+
 It combines:
 - Backend: Node.js + Express serving a JSON file (notes.json) via a REST API at /api/notes.
 - Frontend: React app consuming this backend API.
 - Containerization: Docker + Docker Compose.
 - Deployment: Runs locally, in local Docker, and on a remote Azure VM using Docker Compose.
+
 Built to be easily run:
 - Locally with npm
 - In Docker (Mac or Windows)
@@ -33,7 +35,7 @@ Run backend:
 <img src="./screenshots/node_index.png" width="500" height="200"/>
 
 - Runs on http://localhost:5002
-<img src="./screenshots/localhost_backend.png" height="350"/>
+<img src="./screenshots/localhost_backend.png" width="700" height="350"/>
 
 Run frontend:
 - cd frontend
@@ -42,7 +44,7 @@ Run frontend:
 <img src="./screenshots/npm_start.png" width="400" height="100"/>
 
 - Opens http://localhost:3000
-<img src="./screenshots/localhost_frontend.png" width="400" height="100"/>
+<img src="./screenshots/localhost_frontend.png" width="300" height="100"/>
 
 - Proxies API requests to http://localhost:5002
 
@@ -61,7 +63,7 @@ This allows:
 - Serving the React app at /
 - Proxying API requests /api/* to the backend service in Docker Compose.
 - Build & start containers:
-<img src="./screenshots/compose_ps_docker.png" height="500"/>
+<img src="./screenshots/compose_ps_docker.png" width="700" height="500"/>
 
 - docker compose up -d
 <img src="./screenshots/build_containers.png" width="400" height="100"/>
@@ -71,7 +73,7 @@ Access:
 <img src="./screenshots/localhost_frontend_docker.png" width="400" height="150"/>
 
 - Backend: http://localhost:5001/api/notes
-<img src="./screenshots/localhost_backend_docker.png"  height="350"/>
+<img src="./screenshots/localhost_backend_docker.png" width="700" height="350"/>
 
 Stop:
 - docker compose down
@@ -102,7 +104,7 @@ Access:
 <img src="./screenshots/frontend_vm.png"  height="150"/>
 
 - Backend API direct: http://<VM_IP>:5000/api/notes
-<img src="./screenshots/backend_vm.png"  height="350"/>
+<img src="./screenshots/backend_vm.png" width="700" height="350"/>
 
 Stop:
 - docker-compose down
