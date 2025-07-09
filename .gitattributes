@@ -1,5 +1,9 @@
 # .gitattributes
 
+
+# Handle all files as text automatically unless specified
+* text=auto
+
 # Ensure LF line endings for source files
 *.js     text eol=lf
 *.ts     text eol=lf
