@@ -55,7 +55,7 @@ Builds Docker images for:
 - Starts containers defined in docker-compose.yml.
 Nginx configuration (for frontend Docker image):
 - The frontend uses a custom nginx.conf
-<img src="./screenshots/nginx_conf.png" width="400" height="300"/>
+<img src="./screenshots/nginx_conf.png" width="300" height="200"/>
 
 This allows:
 - Serving the React app at /
