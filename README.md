@@ -81,6 +81,7 @@ This project is a practical DevOps training exercise, designed to showcase how t
 
 **Instead of running docker build + docker push by hand, you can use:**
 - ./build-and-push.sh
+<img src="./screenshots/script.png" width="300" height="200"/>
 - Build images of FE and BE locally and push to Docker Hub by script.
 <img src="./screenshots/upload_dockerhub.png" width="500" height="350"/>
 
