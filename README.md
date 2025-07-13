@@ -71,7 +71,7 @@ This project is a practical DevOps training exercise, designed to showcase how t
 <img src="./screenshots/build_containers.png" width="400" height="100"/>
 
 **Access:**
-- Frontend: http://localhost:8080
+- Frontend: http://localhost:80
 <img src="./screenshots/localhost_frontend_docker.png" width="300" height="100"/>
 
 - Backend: http://localhost:5001/api/notes
@@ -102,7 +102,9 @@ This project is a practical DevOps training exercise, designed to showcase how t
 <img src="./screenshots/compose_ps_vm.png" width="500" height="350"/>
 
 **Pull & run containers:**
+- docker-compose pull
 - docker-compose up -d
+
 **Access:**
 - Frontend: http://<VM_IP>/
 <img src="./screenshots/frontend_vm.png"  height="100"/>

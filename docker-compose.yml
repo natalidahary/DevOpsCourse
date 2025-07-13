@@ -1,10 +1,24 @@
 version: '3.8'
+
 services:
   backend:
-    build: ./backend
+    image: natalidahary/backend:latest
     ports:
       - "5001:5002"
+    environment:
+      - PORT=5002
+    networks:
+      - app-network
+
   frontend:
-    build: ./frontend
+    image: natalidahary/frontend:latest
     ports:
-      - "8080:80"
+      - "80:80"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+    driver: bridge

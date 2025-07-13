@@ -2,7 +2,10 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
+const cors = require('cors');
 const PORT = process.env.PORT || 5002;
+
+app.use(cors({ origin: '*' }));
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -22,9 +25,4 @@ app.post('/api/notes', (req, res) => {
     res.status(201).json(newNote);
 });
 
-const cors = require('cors');
-
-app.use(cors({
-  origin: 'http://localhost:3000'  
-}));
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
