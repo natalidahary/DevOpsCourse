@@ -29,7 +29,7 @@ This project is a practical DevOps training exercise, designed to showcase how t
 | Service  | Container Port | Host Port (Local) | Host Port (Azure VM) | Purpose                              |
 | -------- | -------------- | ----------------- | -------------------- | ------------------------------------ |
 | Backend  | `5002`         | `5001` or `5000`  | `5000`               | Express app serving API `/api/notes` |
-| Frontend | `80`           | `8080` or `80`    | `80`                 | Nginx serving React app              |
+| Frontend | `80`           |  `80`             | `80`                 | Nginx serving React app              |
 
 ---
 
