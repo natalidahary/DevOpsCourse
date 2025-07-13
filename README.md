@@ -34,7 +34,8 @@ This project is a practical DevOps training exercise, designed to showcase how t
 - node index.js
 <img src="./screenshots/node_index.png" width="500" height="100"/>
 
-- Runs on http://localhost:5002
+- Runs on http://localhost:5002/api/notes
+
 <img src="./screenshots/localhost_backend.png" width="600" height="350"/>
 
 **Run frontend:**
@@ -46,7 +47,7 @@ This project is a practical DevOps training exercise, designed to showcase how t
 - Opens http://localhost:3000
 <img src="./screenshots/localhost_frontend.png" width="400" height="100"/>
 
-- Proxies API requests to http://localhost:5002
+- Proxies API requests to http://localhost:5002/api/notes
 
 ---
 
