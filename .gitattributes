@@ -1,0 +1,27 @@
+# .gitattributes
+
+
+# Handle all files as text automatically unless specified
+* text=auto
+
+# Ensure LF line endings for source files
+*.js     text eol=lf
+*.ts     text eol=lf
+*.json   text eol=lf
+*.html   text eol=lf
+*.css    text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.Dockerfile text eol=lf
+docker-compose.* text eol=lf
+*.md     text eol=lf
+*.txt    text eol=lf
+*.sh     text eol=lf
+
+# Binary files
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
