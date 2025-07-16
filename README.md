@@ -128,7 +128,7 @@ This project is a practical DevOps exercise, showing how to develop, containeriz
 
 **On push to main, or on manual trigger from GitHub Actions UI:**
 
-<img src="./screenshots/actions.png" height="100"/>
+<img src="./screenshots/actions.png" width="300" height="200"/>
 
 - **CI:** Runs npm install, lint, build checks on backend & frontend.
 
@@ -136,17 +136,19 @@ This project is a practical DevOps exercise, showing how to develop, containeriz
 
 - **Deploy:** SSH into Azure VM, pulls new images, runs docker-compose up -d.
 
+
 **How to manually trigger workflow:**
 
 <img src="./screenshots/workflow.png" width="400" height="100"/>
 
-Go to your GitHub repo → Actions tab → select your workflow → click Run workflow.
+- Go to your GitHub repo → Actions tab → select your workflow → click Run workflow.
+
 
 **Setup GitHub repository secrets:**
 
-You needed to securely store sensitive info, so you created secrets in your repo under
+- You needed to securely store sensitive info, so you created secrets in your repo under
 
-**Settings → Secrets and variables → Actions → New repository secret**.
+- **Settings → Secrets and variables → Actions → New repository secret**.
 
 | Name                  | Value                                               |
 | --------------------- | --------------------------------------------------- |
@@ -154,6 +156,7 @@ You needed to securely store sensitive info, so you created secrets in your repo
 | `DOCKER_HUB_TOKEN`    | Docker Hub access token or password                 |
 | `VM_HOST`             | Public IP of your Azure VM (like `4.210.218.201`)   |
 | `VM_SSH_KEY`          | Contents of your `my-devops-vm_key.pem` private key |
+
 
 
 **Created workflow file(s):**
@@ -167,6 +170,7 @@ You needed to securely store sensitive info, so you created secrets in your repo
 **.github/workflows/cd-build-push.yml**
 - Builds multi-stage Docker images, pushes to Docker Hub.
 
+
 **CI pipeline steps (Continuous Integration):**
 - Runs on every push or PR to main branch.
 
@@ -175,6 +179,7 @@ You needed to securely store sensitive info, so you created secrets in your repo
 | `npm ci` and `npm run build` | Ensures app builds cleanly        |
 | Optionally runs lint / tests | Catch bugs early                  |
 | Runs on clean VM (runner)    | No leftover state from old builds |
+
 
 
 **CD pipeline steps (Continuous Delivery / Deployment):**
@@ -193,7 +198,7 @@ You needed to securely store sensitive info, so you created secrets in your repo
 
 <img src="./screenshots/lint-frontend.png"  height="100"/>
 
-<img src="./screenshots/test-frontend.png"  height="100"/>
+<img src="./screenshots/test-frontend.png"  width="300" height="200"/>
 
 <img src="./screenshots/lint-backend.png"  height="100"/>
 
