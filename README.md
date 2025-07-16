@@ -123,8 +123,12 @@ This project is a practical DevOps exercise, showing how to develop, containeriz
 **Stop:**
 - docker-compose down
 
+
 ### 4. Automated CI/CD with GitHub Actions
+
 **On push to main, or on manual trigger from GitHub Actions UI:**
+
+<img src="./screenshots/actions.png" height="100"/>
 
 - **CI:** Runs npm install, lint, build checks on backend & frontend.
 
@@ -133,10 +137,15 @@ This project is a practical DevOps exercise, showing how to develop, containeriz
 - **Deploy:** SSH into Azure VM, pulls new images, runs docker-compose up -d.
 
 **How to manually trigger workflow:**
-**Go to your GitHub repo → Actions tab → select your workflow → click Run workflow.**
+
+<img src="./screenshots/workflow.png" width="400" height="100"/>
+
+Go to your GitHub repo → Actions tab → select your workflow → click Run workflow.
 
 **Setup GitHub repository secrets:**
+
 You needed to securely store sensitive info, so you created secrets in your repo under
+
 **Settings → Secrets and variables → Actions → New repository secret**.
 
 | Name                  | Value                                               |
@@ -151,8 +160,10 @@ You needed to securely store sensitive info, so you created secrets in your repo
 
 **.github/workflows/ci.yml**
 - Runs npm ci, npm run lint, and npm test on backend & frontend.
+
 **.github/workflows/deploy-to-vm.yml**
 - SSH into Azure VM, runs docker-compose pull && up -d to deploy latest.
+
 **.github/workflows/cd-build-push.yml**
 - Builds multi-stage Docker images, pushes to Docker Hub.
 
@@ -179,6 +190,16 @@ You needed to securely store sensitive info, so you created secrets in your repo
 
 - This means you never have to SSH & deploy manually.
 - Just git push → GitHub does everything → Azure is updated.
+
+<img src="./screenshots/lint-frontend.png"  height="100"/>
+
+<img src="./screenshots/test-frontend.png"  height="100"/>
+
+<img src="./screenshots/lint-backend.png"  height="100"/>
+
+<img src="./screenshots/test-backend.png"  width="300" height="200"/>
+
+
 
 
 
