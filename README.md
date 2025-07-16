@@ -139,7 +139,7 @@ This project is a practical DevOps exercise, showing how to develop, containeriz
 
 **How to manually trigger workflow:**
 
-<img src="./screenshots/workflow.png" width="400" height="100"/>
+<img src="./screenshots/workflow.png" width="400" height="200"/>
 
 - Go to your GitHub repo → Actions tab → select your workflow → click Run workflow.
 
@@ -179,7 +179,6 @@ This project is a practical DevOps exercise, showing how to develop, containeriz
 | `npm ci` and `npm run build` | Ensures app builds cleanly        |
 | Optionally runs lint / tests | Catch bugs early                  |
 | Runs on clean VM (runner)    | No leftover state from old builds |
-
 
 
 **CD pipeline steps (Continuous Delivery / Deployment):**
