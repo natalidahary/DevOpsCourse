@@ -1,5 +1,5 @@
 # DevOps Course project
-This project is a practical DevOps training exercise, designed to showcase how to develop, containerize, and deploy a full-stack JavaScript application in multiple environments.
+This project is a practical DevOps exercise, showing how to develop, containerize, deploy, and automate a full-stack JavaScript app across local, Docker, and cloud environments — with GitHub Actions CI/CD.
 
 **It combines:**
 - Backend: Node.js + Express serving a JSON file (notes.json) via a REST API at /api/notes.
@@ -22,7 +22,7 @@ This project is a practical DevOps training exercise, designed to showcase how t
 | Web server | Nginx                   | Serves React static files + reverse proxy |
 | Containers | Docker + Docker Compose | Isolated reproducible environments        |
 | Cloud      | Azure VM (Ubuntu)       | Production-like deployment                |
-
+| CI/CD      | GitHub Actions          | Build, push images & deploy automatically |
 
 ## Ports Table
 
@@ -122,3 +122,60 @@ This project is a practical DevOps training exercise, designed to showcase how t
 
 **Stop:**
 - docker-compose down
+
+### 4. Automated CI/CD with GitHub Actions
+**On push to main, or on manual trigger from GitHub Actions UI:**
+
+- **CI:** Runs npm install, lint, build checks on backend & frontend.
+
+- **CD:** Builds Docker images, pushes to Docker Hub.
+
+- **Deploy:** SSH into Azure VM, pulls new images, runs docker-compose up -d.
+
+**How to manually trigger workflow:**
+**Go to your GitHub repo → Actions tab → select your workflow → click Run workflow.**
+
+**Setup GitHub repository secrets:**
+You needed to securely store sensitive info, so you created secrets in your repo under
+**Settings → Secrets and variables → Actions → New repository secret**.
+
+| Name                  | Value                                               |
+| --------------------- | --------------------------------------------------- |
+| `DOCKER_HUB_USERNAME` | Your Docker Hub username                            |
+| `DOCKER_HUB_TOKEN`    | Docker Hub access token or password                 |
+| `VM_HOST`             | Public IP of your Azure VM (like `4.210.218.201`)   |
+| `VM_SSH_KEY`          | Contents of your `my-devops-vm_key.pem` private key |
+
+
+**Created workflow file(s):**
+
+- .github/workflows/ci.yml
+- .github/workflows/deploy-to-vm.yml
+- .github/workflows/cd-build-push.yml
+
+**CI pipeline steps (Continuous Integration):**
+- Runs on every push or PR to main branch.
+
+| What it does                 | Why                               |
+| ---------------------------- | --------------------------------- |
+| `npm ci` and `npm run build` | Ensures app builds cleanly        |
+| Optionally runs lint / tests | Catch bugs early                  |
+| Runs on clean VM (runner)    | No leftover state from old builds |
+
+
+**CD pipeline steps (Continuous Delivery / Deployment):**
+- Triggered on main push, or manually from Actions UI.
+
+| What it does                                        | Why                            |
+| --------------------------------------------------- | ------------------------------ |
+| Builds Docker images for frontend & backend         | Ensures up-to-date containers  |
+| Logs in to Docker Hub using secrets                 | Push images to Docker Hub      |
+| Uses `docker buildx` for multi-platform builds      | Consistent image builds        |
+| SSH into Azure VM via your private key (in secrets) | Executes remote commands       |
+| Runs `docker-compose pull` & `docker-compose up -d` | Pulls latest images & restarts |
+
+- This means you never have to SSH & deploy manually.
+- Just git push → GitHub does everything → Azure is updated.
+
+
+

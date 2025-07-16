@@ -25,4 +25,10 @@ app.post('/api/notes', (req, res) => {
     res.status(201).json(newNote);
 });
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+//Only start server if run directly (not required by tests)
+if (require.main === module) {
+    app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+}
+
+//Export app for testing
+module.exports = app;
