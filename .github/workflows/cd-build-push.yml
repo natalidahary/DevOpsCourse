@@ -2,6 +2,11 @@ name: Build & Push
 
 on:
   workflow_call:
+    secrets:
+      DOCKER_HUB_USERNAME:
+        required: true
+      DOCKER_HUB_TOKEN:
+        required: true
 
 jobs:
   build-and-push:

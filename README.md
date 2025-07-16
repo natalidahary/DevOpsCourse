@@ -149,9 +149,12 @@ You needed to securely store sensitive info, so you created secrets in your repo
 
 **Created workflow file(s):**
 
-- .github/workflows/ci.yml
-- .github/workflows/deploy-to-vm.yml
-- .github/workflows/cd-build-push.yml
+**.github/workflows/ci.yml**
+- Runs npm ci, npm run lint, and npm test on backend & frontend.
+**.github/workflows/deploy-to-vm.yml**
+- SSH into Azure VM, runs docker-compose pull && up -d to deploy latest.
+**.github/workflows/cd-build-push.yml**
+- Builds multi-stage Docker images, pushes to Docker Hub.
 
 **CI pipeline steps (Continuous Integration):**
 - Runs on every push or PR to main branch.
